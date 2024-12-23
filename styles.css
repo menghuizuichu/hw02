@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.animation-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.animated-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: diagonal-animation 9s infinite;
+}
+
+.animated-image:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.animated-image:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.animated-image:nth-child(3) {
+    animation-delay: 6s;
+}
+
+@keyframes diagonal-animation {
+    0% {
+        opacity: 0;
+        transform: translate(-100%, -100%);
+    }
+    25% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    75% {
+        opacity: 0;
+        transform: translate(100%, 100%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(100%, 100%);
+    }
+}
